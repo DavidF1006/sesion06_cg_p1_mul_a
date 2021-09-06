@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+
+    <script>
+    var canvasElement = document.querySelector("#myCanvas");
+    var ctx= canvasElement.getContext("2d");
+
+  //Cilindro
+    var circle2 = new Path2D();
+    circle2.arc(125, 200, 25, 0, 2 * Math.PI);
+
+    var rectangle = new Path2D();
+    rectangle.rect(100, 199, 51, 100);
+
+    var circle = new Path2D();
+    circle.arc(125, 300, 25, 0, 2 * Math.PI);
+
+   ctx.stroke(circle2);    
+   ctx.fill(rectangle);
+   ctx.fill(circle);
+
+
+   // Pirámide
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(125,45);
+    ctx.lineTo(125,135);
+    ctx.lineTo(200,125);
+    ctx.fill();  
+    ctx.beginPath();
+    ctx.moveTo(125,135);
+    ctx.lineTo(125,45);
+    ctx.lineTo(45,125);
+    ctx.closePath();
+    ctx.rotate((Math.PI/180)*180)
+    ctx.stroke();
+
+
+    </script>
+
+</body>
+</html>
